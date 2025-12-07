@@ -43,6 +43,30 @@ body {
     pointer-events: none;
 }
 
+/* Private Access Button */
+.private-access {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.private-access:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .logo img {
     height: 160px;
     width: auto;
