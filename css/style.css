@@ -1,0 +1,501 @@
+/* KUPOL Website - Complete Styles */
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Base Section Styles */
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Logo - Fixed/Docked */
+.logo {
+    position: fixed;
+    top: 0px;
+    left: 50px;
+    z-index: 1000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.logo.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.logo img {
+    height: 160px;
+    width: auto;
+}
+
+/* Site Footer */
+.site-footer {
+    background: #000;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5px;
+}
+
+/* Typography */
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+    margin-bottom: 18px;
+    opacity: 0.92;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Hero button reveal animation */
+.section-hero .btn {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: background 0.3s ease, color 0.3s ease, opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section-hero .btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+    align-items: flex-end;
+}
+
+.btn-group .btn {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Buttons aligned left in content blocks */
+.content-inner .btn,
+.insoles-content .btn {
+    display: inline-block;
+}
+
+/* ================================
+   SECTION 1: HERO (Full-screen background)
+   ================================ */
+.section-hero {
+    display: flex;
+    align-items: center;
+}
+
+.section-hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-hero .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.1);
+}
+
+.section-hero .hero-content {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 420px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================
+   THREE COLUMN LAYOUT (Kollide, Innovation)
+   ================================ */
+.three-column {
+    display: flex;
+    height: 100vh;
+}
+
+.three-column .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-column .column-image {
+    flex: 0 0 33.33%;
+    overflow: hidden;
+}
+
+.three-column .column-image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.three-column .column-content {
+    flex: 0 0 33.33%;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-column .content-inner {
+    max-width: 520px;
+}
+
+.three-column .content-inner,
+.two-column .content-inner,
+.insoles-content .content-inner {
+    text-align: right;
+}
+
+.three-column .content-inner h1,
+.three-column .content-inner p,
+.two-column .content-inner h1,
+.two-column .content-inner p,
+.insoles-content .content-inner h1,
+.insoles-content .content-inner p {
+    text-align: left;
+}
+
+/* Section 3: Body now uses .three-column layout */
+
+/* ================================
+   TWO COLUMN LAYOUT (Insoles, Founder)
+   ================================ */
+.two-column {
+    display: flex;
+    height: 100vh;
+}
+
+.two-column .column {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-column .column-image {
+    overflow: hidden;
+}
+
+.two-column .column-image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.two-column .column-content {
+    padding: 80px 60px;
+    position: relative;
+}
+
+.two-column .content-inner {
+    max-width: 450px;
+    position: relative;
+    z-index: 10;
+}
+
+/* ================================
+   SECTION 5: INSOLES (1/3 + 2/3 with overlay)
+   ================================ */
+.insoles-layout {
+    position: relative;
+    display: flex;
+    height: 100vh;
+}
+
+.insoles-image-left {
+    flex: 0 0 33.33%;
+    overflow: hidden;
+}
+
+.insoles-image-left img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.insoles-image-right {
+    flex: 0 0 66.67%;
+    overflow: hidden;
+}
+
+.insoles-image-right img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.insoles-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 150px));
+    width: 33.33%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.insoles-content .content-inner {
+    max-width: 520px;
+}
+
+/* Insoles responsive */
+@media (max-width: 992px) {
+    .insoles-layout {
+        flex-direction: column;
+        height: auto;
+        position: relative;
+    }
+
+    .insoles-image-left {
+        flex: none;
+        height: 100vh;
+        order: 0;
+    }
+
+    .insoles-image-right {
+        flex: none;
+        height: 100vh;
+        order: 1;
+    }
+
+    .insoles-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: translateY(-150px);
+        height: 100vh;
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Founder section - portrait styling */
+.section-founder .column-image img {
+    object-position: center top;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+@media (max-width: 1200px) {
+    .logo {
+        top: 30px;
+        left: 30px;
+    }
+
+    .logo img {
+        height: 140px;
+    }
+
+    .section-hero .hero-content {
+        left: 30px;
+        width: 400px;
+    }
+
+    .three-column .column-content {
+        padding: 60px 40px;
+    }
+
+    .two-column .column-content {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-hero .hero-content {
+        left: 30px;
+        width: 380px;
+    }
+
+    .three-column {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .three-column .column-image {
+        flex: none;
+        height: 100vh;
+    }
+
+    .three-column .column-image img {
+        height: 100vh;
+    }
+
+    .three-column .column-content {
+        flex: none;
+        padding: 60px 30px;
+    }
+
+    .two-column {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .two-column .column {
+        flex: none;
+    }
+
+    .two-column .column-image {
+        height: 100vh;
+    }
+
+    .two-column .column-image img {
+        height: 100vh;
+    }
+
+    .two-column .column-content {
+        padding: 60px 30px;
+    }
+
+    .section-body .background-images {
+        flex-direction: column;
+    }
+
+    .section-body .centered-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .logo img {
+        height: 120px;
+    }
+
+    .btn {
+        padding: 14px 30px;
+        font-size: 13px;
+    }
+
+    .section-footer {
+        font-size: 11px;
+        padding: 0 20px;
+    }
+
+    .section-hero .hero-content {
+        left: 20px;
+        width: calc(100% - 40px);
+        max-width: 350px;
+    }
+
+    .three-column .column-image {
+        height: 100vh;
+    }
+
+    .three-column .column-image img {
+        height: 100vh;
+    }
+
+    .two-column .column-image {
+        height: 100vh;
+    }
+
+    .two-column .column-image img {
+        height: 100vh;
+    }
+}
+
+/* Word-by-word reveal animation */
+.word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.word.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Print styles */
+@media print {
+    .section {
+        page-break-after: always;
+        min-height: auto;
+    }
+}
